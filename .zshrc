@@ -59,7 +59,9 @@ autoload bashcompinit
 bashcompinit
 
 # npm completion
-source "${HOME}/.zsh/npm-completion.bash"
+if [ -e "${HOME}/.zsh/npm-completion.bash" ]; then
+    source "${HOME}/.zsh/npm-completion.bash"
+fi
 
 zstyle ':completion:*:default' menu select=1
 
@@ -85,7 +87,10 @@ export PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
 export PATH="${HOME}/bin:${PATH}"
 
 # rbenv
-eval "$(rbenv init -)"
+which rbenv > /dev/null 2>&1 
+if [ $? = 0 ]; then
+    eval "$(rbenv init -)"
+fi
 
 # ls aliases
 alias l="ls"
