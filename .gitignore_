@@ -1,0 +1,8 @@
+\#*#
+\.#*
+*~
+.DS_Store
+._*
+node_modules
+npm-debug.log
+my_*

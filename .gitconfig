@@ -1,0 +1,19 @@
+[user]
+	name = Hidekazu Kobayashi
+	email = kobahide789@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+	pager = less -R
+[color]
+	ui = auto
+[alias]
+	st = status
+	co = checkout
+	ca = commit -a
+	ps = push
+	lg = log --stat --graph
+	pl = pull
+[push]
+	default = simple
+[include]
+	path = .gitconfig.local

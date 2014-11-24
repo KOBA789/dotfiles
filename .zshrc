@@ -1,11 +1,23 @@
+# machine
+source "${HOME}/.zsh/machine.zsh"
+
 # theme
-THEME_COLOR=pink
+
+if [ -z $THEME_COLOR ]; then
+    # default is raspberry
+    THEME_COLOR=raspberry
+fi
 
 case $THEME_COLOR in
-    orange) THEME_COLOR=166-172;;
-    green ) THEME_COLOR=28-35;;
-    pink  ) THEME_COLOR=125-126;;
-    purple) THEME_COLOR=90-91;;
+    orange    ) THEME_COLOR=166-172;;
+    green     ) THEME_COLOR=28-35;;
+    blue      ) THEME_COLOR=25-32;;
+    sky       ) THEME_COLOR=32-39;;
+    red       ) THEME_COLOR=124-160;;
+    raspberry ) THEME_COLOR=125-126;;
+    pink      ) THEME_COLOR=198-199;;
+    purple    ) THEME_COLOR=90-91;;
+    gray      ) THEME_COLOR=240-242;;
 esac
 
 export COLOR_DARK=${THEME_COLOR%-*}
