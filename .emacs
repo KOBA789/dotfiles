@@ -4,6 +4,11 @@
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
+(let ((default-directory (expand-file-name "~/.emacs.d/elisp")))
+  (add-to-list 'load-path default-directory)
+  (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
+      (normal-top-level-add-subdirs-to-load-path)))
+
 (setq gc-cons-threshold (* 50 gc-cons-threshold))
 
 (setq frame-background-mode 'dark)
@@ -77,9 +82,18 @@
                       :box nil
                       :weight weight))
 
-(make/set-face 'mode-line-modes       "color-125" "color-231" 'bold)
-(make/set-face 'mode-line-info        "color-231" "color-126" 'normal)
-(make/set-face 'mode-line-buffer-name "color-231" "color-125" 'bold)
+(make/set-face 'mode-line-modes
+               (concat "color-" (getenv "COLOR_DARK"))
+               "color-231"
+               'bold)
+(make/set-face 'mode-line-info
+               "color-231"
+               (concat "color-" (getenv "COLOR_LIGHT"))
+               'normal)
+(make/set-face 'mode-line-buffer-name
+               "color-231"
+               (concat "color-" (getenv "COLOR_DARK"))
+               'bold)
 
 ;; Other plugins
 
@@ -109,6 +123,7 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elisp/ac-dict")
 (ac-config-default)
+(setq ac-ignore-case nil)
 
 ;; -color-theme
 (load-theme 'dark-laptop t t)
@@ -161,6 +176,16 @@
         indent-tabs-mode t
         tab-width 8))
 (add-hook 'c-mode-hook 'linux-style)
+
+;; -proof-general
+(load-file "/usr/local/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
+(defadvice coq-mode-config (after deactivate-holes-mode () activate)
+  "Deactivate holes-mode when coq-mode is activated."
+  (progn (holes-mode 0))
+)
+(add-hook 'proof-mode-hook
+          '(lambda ()
+             (define-key proof-mode-map (kbd "C-c C-j") 'proof-goto-point)))
 
 ;; -menu-bar
 (menu-bar-mode 0)

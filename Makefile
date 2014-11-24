@@ -16,8 +16,7 @@ npm_completion: zsh
 	fi
 
 brew_completion: zsh
-	which brew
-	if [ $(shell which npm 2>&1 > /dev/null; echo $$?) -eq 0 ]; then \
+	if [ $(shell which brew 2>&1 > /dev/null; echo $$?) -eq 0 ]; then \
 		ln -s -f /usr/local/Library/Contributions/brew_zsh_completion.zsh ${HOME}/.zsh/functions/_brew; \
 	fi
 

@@ -1,19 +1,44 @@
+# theme
+THEME_COLOR=pink
+
+case $THEME_COLOR in
+    orange) THEME_COLOR=166-172;;
+    green ) THEME_COLOR=28-35;;
+    pink  ) THEME_COLOR=125-126;;
+    purple) THEME_COLOR=90-91;;
+esac
+
+export COLOR_DARK=${THEME_COLOR%-*}
+export COLOR_LIGHT=${THEME_COLOR#*-}
+
+# profile
+PROFILE_DEFAULT_USER=koba789
+PROFILE_DEFAULT_HOST=koba789-pro
+
 # color
 autoload colors
 colors
 
 # prompt
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '[%b]'
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
+zstyle ':vcs_info:*' formats '#%b'
+zstyle ':vcs_info:*' actionformats '#%b|%a'
+PR_USER="%U%n%u%F{250}@%f"
+PR_COLON="%F{250}:%f"
+PR_HOST="%m${PR_COLON}"
+PR_HOST_H="%B%K{$COLOR_DARK}%m%k%b${PR_COLON}"
 precmd() {
     LANG=en_US.UTF-8 vcs_info
-    PROMPT="%{${fg[green]}%}${vcs_info_msg_0_}%F{125}%~%f%(!.#.$) "
-    #psvar=()
-    #psvar[1]=$(osx-cpu-temp)
-    #RPROMPT="%{${fg[red]}%}[%1v]%{${reset_color}%}"
+    PROMPT="%~%F{green}${vcs_info_msg_0_}%F{$COLOR_DARK} %(!.#.$)%f "
+    if [ $PROFILE_DEFAULT_HOST != $(hostname -s) ]; then
+        PROMPT="${PR_HOST_H}${PROMPT}"
+        if [ $PROFILE_DEFAULT_USER != $(whoami) ]; then
+            PROMPT="${PR_USER}${PROMPT}"
+        fi
+    elif [ $PROFILE_DEFAULT_USER != $(whoami) ]; then
+        PROMPT="${PR_USER}${PR_HOST}${PROMPT}"
+    fi
 }
-#setopt transient_rprompt
 
 # completion
 autoload -U compinit
@@ -46,6 +71,9 @@ bindkey -e
 # PATH
 export PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
 export PATH="${HOME}/bin:${PATH}"
+
+# rbenv
+eval "$(rbenv init -)"
 
 # ls aliases
 alias l="ls"
