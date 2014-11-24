@@ -2,8 +2,15 @@ all: emacs zsh tmux npm_completion brew_completion
 
 emacs:
 	ln -s -f ${PWD}/.emacs ${HOME}/.emacs
+
+	mkdir -p ${HOME}/.emacs.d/inits
+	ln -s -f ${PWD}/.emacs.d/inits/* ${HOME}/.emacs.d/inits
+
 	mkdir -p ${HOME}/.emacs.d/themes
 	ln -s -f ${PWD}/.emacs.d/themes/dark-laptop-theme.el ${HOME}/.emacs.d/themes/dark-laptop-theme.el
+
+	mkdir -p ${HOME}/.emacs.d/elisp
+
 	emacs --batch -q -l ${PWD}/package-install.el -f 'bundle-install'
 
 zsh:
@@ -22,3 +29,5 @@ brew_completion: zsh
 
 tmux:
 	ln -s -f ${PWD}/.tmux.conf ${HOME}/.tmux.conf
+
+.PHONY: all emacs zsh npm_completion brew_completion tmux
