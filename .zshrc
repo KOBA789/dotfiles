@@ -1,5 +1,5 @@
-# machine
-source "${HOME}/.zsh/machine.zsh"
+# inits
+source ${HOME}/.zsh/*.zsh
 
 # theme
 

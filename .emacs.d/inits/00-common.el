@@ -10,6 +10,9 @@
 (setq frame-background-mode 'dark)
 (setq truncate-partial-width-windows nil)
 (custom-set-variables
+ ;; highlight region
+ '(transient-mark-mode t)
+
  ;; indent
  '(tab-width 2)
  '(indent-tabs-mode nil)
