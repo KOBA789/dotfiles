@@ -16,7 +16,7 @@ emacs:
 zsh:
 	ln -s -f ${PWD}/.zshrc ${HOME}/.zshrc
 	mkdir -p ${HOME}/.zsh/functions
-	if [ ! -e ${HOME}/.zsh/machine.zsh ]; then cp ${PWD}/.zsh/machine.zsh ${HOME}/.zsh/machine.zsh; fi
+	if [ ! -e ${HOME}/.zsh/00-machine.zsh ]; then cp ${PWD}/.zsh/00-machine.zsh ${HOME}/.zsh/00-machine.zsh; fi
 
 npm_completion: zsh
 	if [ $(shell which npm 2>&1 > /dev/null; echo $$?) -eq 0 ]; then \
