@@ -1,5 +1,7 @@
 # inits
-source ${HOME}/.zsh/*.zsh
+for f in $(ls ${HOME}/.zsh/*.zsh | sort); do
+    source $f
+done
 
 # theme
 
