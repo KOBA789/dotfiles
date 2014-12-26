@@ -64,7 +64,6 @@
                 (:propertize minor-mode-alist  face mode-line-modes)
                 (:propertize " "               face mode-line-modes)
                 (:propertize " %b "            face mode-line-buffer-name)
-                (:eval (git-branch-mode-line))
                 (:propertize " %+ %Z %p %l:%c "       face mode-line-info)))
 
 (set-face-attribute 'mode-line nil
