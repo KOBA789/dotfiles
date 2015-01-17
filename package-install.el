@@ -33,6 +33,7 @@
     s
     scss-mode
     w3m
+    web-mode
     yagist
     yasnippet
     zlc
