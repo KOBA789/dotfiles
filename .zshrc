@@ -87,6 +87,7 @@ bindkey -e
 # PATH
 export PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
 export PATH="${HOME}/bin:${PATH}"
+export PATH="${HOME}/.rbenv/bin:${PATH}"
 
 # rbenv
 which rbenv > /dev/null 2>&1 
