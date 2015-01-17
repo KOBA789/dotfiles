@@ -175,5 +175,12 @@
         tab-width 8))
 (add-hook 'c-mode-hook 'linux-style)
 
+;; -scss-mode
+(add-hook 'scss-mode-hook
+          '(lambda ()
+             (and
+              (set (make-local-variable 'css-indent-offset) 2)
+              (set (make-local-variable 'scss-compile-at-save) nil))))
+
 ;; -menu-bar
 (menu-bar-mode 0)
