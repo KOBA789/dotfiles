@@ -70,6 +70,7 @@ zstyle ':completion:*:default' menu select=1
 setopt auto_pushd
 setopt auto_cd
 setopt nolistbeep
+setopt hist_ignore_space
 
 # history
 HISTFILE="${HOME}/.zsh_history"
@@ -108,6 +109,10 @@ alias gco="git checkout"
 alias gmg="git merge"
 alias gcp="git cherry-pick"
 alias glg="git log"
+
+# other aliases
+alias fg=" fg"
+alias bk=" bk"
 
 # pkgconfig
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:/usr/local/lib/pkgconfig"
