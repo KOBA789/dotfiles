@@ -112,7 +112,7 @@ alias glg="git log"
 
 # other aliases
 alias fg=" fg"
-alias bk=" bk"
+alias bk=" popd"
 
 # pkgconfig
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:/usr/local/lib/pkgconfig"
