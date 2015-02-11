@@ -15,27 +15,37 @@
     gist
     go-autocomplete
     go-mode
+    haml-mode
     init-loader
+    jade-mode
     js2-mode
     js2-refactor
     json-mode
     json-reformat
     json-snatcher
     less-css-mode
+    log4e
     logito
     markdown-mode
     markdown-mode+
     multiple-cursors
     nginx-mode
+    org
+    ox-gfm
     pcache
     popup
     popwin
     s
     scss-mode
+    slim-mode
+    sws-mode
+    tss
     w3m
     web-mode
     yagist
+    yaml-mode
     yasnippet
+    yaxception
     zlc
     ))
 
