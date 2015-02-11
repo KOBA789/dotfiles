@@ -89,6 +89,7 @@ bindkey -e
 export PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
 export PATH="${HOME}/bin:${PATH}"
 export PATH="${HOME}/.rbenv/bin:${PATH}"
+export PATH="$PATH:./node_modules/.bin"
 
 # rbenv
 which rbenv > /dev/null 2>&1 
