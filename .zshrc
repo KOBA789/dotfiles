@@ -59,6 +59,7 @@ autoload -U compinit
 compinit
 autoload bashcompinit
 bashcompinit
+zstyle ":completion:*:commands" rehash 1
 
 # npm completion
 if [ -e "${HOME}/.zsh/npm-completion.bash" ]; then
