@@ -197,6 +197,9 @@
               (set (make-local-variable 'css-indent-offset) 2)
               (set (make-local-variable 'scss-compile-at-save) nil))))
 
+;; -ruby-mode
+(setq ruby-insert-encoding-magic-comment nil)
+
 ;; -menu-bar
 (menu-bar-mode 0)
 
