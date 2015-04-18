@@ -252,4 +252,4 @@
     (optimize-char-table table)
     (set-char-table-parent table char-width-table)
     (setq char-width-table table)))
-(set-east-asian-ambiguous-width 2)
+(set-east-asian-ambiguous-width 1)

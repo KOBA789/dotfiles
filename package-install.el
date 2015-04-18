@@ -44,7 +44,6 @@
     web-mode
     yagist
     yaml-mode
-    yasnippet
     yaxception
     zlc
     ))
