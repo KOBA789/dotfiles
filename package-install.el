@@ -46,6 +46,7 @@
     yaml-mode
     yaxception
     zlc
+    enh-ruby-mode
     ))
 
 (defun bundle-install ()
