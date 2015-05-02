@@ -6,6 +6,7 @@
 (add-to-list 'auto-mode-alist '("Guardfile$" . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . enh-ruby-mode))
 (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
+(custom-set-variables '(enh-ruby-add-encoding-comment-on-save nil))
 (add-hook
  'enh-ruby-mode-hook
  '(lambda ()
