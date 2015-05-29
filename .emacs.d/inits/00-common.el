@@ -278,3 +278,9 @@
   "Opens FILE with root privileges."
   (interactive "F")
     (set-buffer (find-file (concat "/sudo::" file))))
+
+;; -opacity
+(defun on-after-init ()
+  (unless (display-graphic-p (selected-frame))
+    (set-face-background 'default "unspecified-bg" (selected-frame))))
+(add-hook 'window-setup-hook 'on-after-init)
