@@ -10,7 +10,5 @@
 (add-hook
  'enh-ruby-mode-hook
  '(lambda ()
-    (electric-indent-mode t)
-    (electric-layout-mode t)
     (setq ruby-block-highlight-toggle t)
     (setq enh-ruby-deep-indent-paren nil)))
