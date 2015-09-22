@@ -39,7 +39,15 @@
  '(auto-save-default nil)
 
  ;; disable git
- '(vc-handled-backends ()))
+ '(vc-handled-backends ())
+
+ ;; direx icon
+ '(direx:leaf-icon "  ")
+ '(direx:open-icon "- ")
+ '(direx:closed-icon "+ ")
+
+ ;; highlight trailing whitespace
+ '(show-trailing-whitespace t))
 
 ;; -Keybindings
 ;; --ToggleTruncateLines
