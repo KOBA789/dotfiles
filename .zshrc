@@ -87,6 +87,10 @@ export EDITOR='emacs'
 bindkey -e
 
 # PATH
+which brew > /dev/null 2>&1 
+if [ $? = 0 ]; then
+    export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+fi
 export PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
 export PATH="${HOME}/bin:${PATH}"
 export PATH="${HOME}/.rbenv/bin:${PATH}"
@@ -99,6 +103,7 @@ if [ $? = 0 ]; then
 fi
 
 # ls aliases
+alias ls='ls --color=auto'
 alias l="ls"
 alias la="ls"
 alias ll="ls -la"
