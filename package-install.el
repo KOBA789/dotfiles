@@ -35,6 +35,7 @@
     pcache
     popup
     popwin
+    robe
     s
     scss-mode
     slim-mode
