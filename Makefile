@@ -29,7 +29,13 @@ brew_completion: zsh
 	fi
 
 tmux:
-	ln -s -f ${PWD}/.tmux.conf ${HOME}/.tmux.conf
+	if [ $(shell which tmux 2>&1 > /dev/null; echo $$?) -eq 0 ]; then \
+		if [ $(shell bash -c '[[ `tmux -V` == *2.* ]]'; echo $$?) -eq 0 ]; then \
+			ln -s -f ${PWD}/.tmux2.conf ${HOME}/.tmux.conf; \
+		else \
+			ln -s -f ${PWD}/.tmux.conf ${HOME}/.tmux.conf; \
+		fi \
+	fi
 
 git:
 	ln -s -f ${PWD}/.gitconfig ${HOME}/.gitconfig
