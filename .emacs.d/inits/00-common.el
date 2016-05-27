@@ -28,6 +28,7 @@
  ;; js2-mode
  '(js2-basic-offset 2)
  '(js2-include-node-externs t)
+ '(js2-strict-trailing-comma-warning nil)
 
  ;; json
  '(js-indent-level 2)
