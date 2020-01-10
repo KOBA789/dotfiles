@@ -11,7 +11,7 @@
 	co = checkout
 	ca = commit -a
 	ps = push
-	lg = log --stat --graph --decorate=full
+	lg = log --stat --graph
 	pl = pull
 [push]
 	default = simple
