@@ -54,6 +54,8 @@
   "package install from list"
   (interactive)
   (package-refresh-contents)
-  (dolist (package bundle-package-list)
-    (when (not (package-installed-p package))
-      (package-install package))))
+  (mapc #'(lambda (package)
+            (unless (package-installed-p package)
+              (package-install package)))
+        bundle-package-list)
+  (save-buffers-kill-emacs))
