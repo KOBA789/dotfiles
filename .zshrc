@@ -43,7 +43,12 @@ PR_HOST="%m${PR_COLON}"
 PR_HOST_H="%B%K{$COLOR_DARK}%m%k%b${PR_COLON}"
 precmd() {
     LANG=en_US.UTF-8 vcs_info
-    PROMPT="%F{blue}%~%F{green}${vcs_info_msg_0_}%F{250}%(!.#.$)%f "
+    if test -z "`jobs`"; then
+        PR_CWD="%~"
+    else
+        PR_CWD="%U%~%u"
+    fi
+    PROMPT="%F{blue}${PR_CWD}%F{green}${vcs_info_msg_0_}%F{250}%(!.#.$)%f "
     if [ $PROFILE_DEFAULT_HOST != $(hostname -s) ]; then
         PROMPT="${PR_HOST_H}${PROMPT}"
         if [ $PROFILE_DEFAULT_USER != $(whoami) ]; then
@@ -56,7 +61,7 @@ precmd() {
 
 # completion
 autoload -U compinit
-compinit
+compinit -u
 autoload bashcompinit
 bashcompinit
 zstyle ":completion:*:commands" rehash 1
@@ -87,9 +92,9 @@ export EDITOR='emacs'
 bindkey -e
 
 # PATH
-which brew > /dev/null 2>&1 
+which brew > /dev/null 2>&1
 if [ $? = 0 ]; then
-    export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+    export PATH="$(cat ~/.brew_prefix_cache 2> /dev/null || brew --prefix coreutils | tee ~/.brew_prefix_cache)/libexec/gnubin:${PATH}"
 fi
 export PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
 export PATH="${HOME}/bin:${PATH}"
@@ -97,9 +102,9 @@ export PATH="${HOME}/.rbenv/bin:${PATH}"
 export PATH="$PATH:./node_modules/.bin"
 
 # rbenv
-which rbenv > /dev/null 2>&1 
+which rbenv > /dev/null 2>&1
 if [ $? = 0 ]; then
-    eval "$(rbenv init -)"
+    eval "$(rbenv init --no-rehash -)"
 fi
 
 # ls aliases
