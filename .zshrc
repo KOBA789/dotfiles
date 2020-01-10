@@ -134,3 +134,6 @@ MKSDBX="${HOME}/src/mksdbx/mksdbx"
 if [ -f $MKSDBX ]; then
     source $MKSDBX
 fi
+
+# report spent time of long running command automatically
+export REPORTTIME=10
