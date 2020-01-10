@@ -1,4 +1,4 @@
-all: emacs zsh tmux npm_completion brew_completion git
+all: emacs zsh tmux npm_completion brew_completion git alacritty
 
 emacs:
 	ln -s -f ${PWD}/.emacs ${HOME}/.emacs
@@ -42,4 +42,8 @@ git:
 	ln -s -f ${PWD}/.gitignore_ ${HOME}/.gitignore
 	touch ${HOME}/.gitconfig.local
 
-.PHONY: all emacs zsh npm_completion brew_completion tmux git
+alacritty:
+	mkdir -p ${HOME}/.config/alacritty
+	ln -s -f ${PWD}/.config/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
+
+.PHONY: all emacs zsh npm_completion brew_completion tmux git alacritty
