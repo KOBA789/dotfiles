@@ -5,10 +5,8 @@ done
 
 # theme
 
-if [ -z $THEME_COLOR ]; then
-    # default is raspberry
-    THEME_COLOR=raspberry
-fi
+# default is raspberry
+THEME_COLOR=${THEME_COLOR:-raspberry}
 
 case $THEME_COLOR in
     orange    ) THEME_COLOR=166-172;;
