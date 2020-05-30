@@ -104,16 +104,6 @@
 
 ;; Other plugins
 
-;; -popwin
-(require 'popwin)
-(setq display-buffer-function 'popwin:display-buffer)
-
-;; -direx
-(require 'direx)
-(push '(direx:direx-mode :position left :width 25 :dedicated t)
-      popwin:special-display-config)
-(global-set-key (kbd "C-x C-j") 'direx-project:jump-to-project-root-other-window)
-
 ;; -zlc
 (require 'zlc)
 (zlc-mode t)

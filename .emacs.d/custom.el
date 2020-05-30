@@ -6,9 +6,6 @@
  '(auto-save-default nil)
  '(cssm-indent-function (function cssm-c-style-indenter))
  '(cssm-indent-level 2)
- '(direx:closed-icon "+ ")
- '(direx:leaf-icon "  ")
- '(direx:open-icon "- ")
  '(enh-ruby-add-encoding-comment-on-save nil)
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
@@ -19,7 +16,7 @@
  '(make-backup-files nil)
  '(package-selected-packages
    (quote
-    (jsonnet-mode terraform-mode apache-mode js2-mode ggtags dockerfile-mode zlc yaml-mode web-mode scss-mode popwin nginx-mode markdown-mode+ less-css-mode js2-refactor init-loader haml-mode go-mode go-autocomplete esup erlang enh-ruby-mode direx coffee-mode)))
+    (robe auto-sudoedit jsonnet-mode terraform-mode apache-mode js2-mode ggtags dockerfile-mode zlc yaml-mode web-mode scss-mode nginx-mode markdown-mode+ less-css-mode js2-refactor init-loader haml-mode go-mode go-autocomplete esup erlang enh-ruby-mode coffee-mode)))
  '(safe-local-variable-values
    (quote
     ((whitespace-line-column . 80)
