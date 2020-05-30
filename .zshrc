@@ -93,7 +93,8 @@ bindkey -e
 # PATH
 which brew > /dev/null 2>&1
 if [ $? = 0 ]; then
-    export PATH="$(cat ~/.brew_prefix_cache 2> /dev/null || brew --prefix coreutils | tee ~/.brew_prefix_cache)/libexec/gnubin:${PATH}"
+    BREW_PREFIX="$(cat ~/.brew_prefix_cache 2> /dev/null || brew --prefix | tee ~/.brew_prefix_cache)"
+    export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:${BREW_PREFIX}/opt/gnu-tar/libexec/gnubin:${PATH}"
 fi
 export PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
 export PATH="${HOME}/bin:${PATH}"
