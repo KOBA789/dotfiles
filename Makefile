@@ -11,7 +11,10 @@ emacs:
 
 	mkdir -p ${HOME}/.emacs.d/elisp
 
-	emacs --batch -q -l ${PWD}/package-install.el -f 'bundle-install'
+	ln -s -f ${PWD}/.emacs.d/custom.el ${HOME}/.emacs.d/custom.el
+
+	@echo "You should run"
+	@echo "  M-x package-install-selected-packages"
 
 zsh:
 	ln -s -f ${PWD}/.zshrc ${HOME}/.zshrc
