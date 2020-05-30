@@ -17,6 +17,10 @@
 ;; --BackwardChar
 (global-set-key "\C-h" 'delete-backward-char)
 
+;; -Color Theme
+(load-theme 'dark-laptop t t)
+(enable-theme 'dark-laptop)
+
 ;; -Powerline
 (defun git-branch-mode-line ()
   (let* ((branch (replace-regexp-in-string
@@ -81,10 +85,6 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elisp/ac-dict")
 (ac-config-default)
 (setq ac-ignore-case nil)
-
-;; -color-theme
-(load-theme 'dark-laptop t t)
-(enable-theme 'dark-laptop)
 
 ;; -js2-refactor
 (js2r-add-keybindings-with-prefix "C-c C-m")
