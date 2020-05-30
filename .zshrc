@@ -136,4 +136,4 @@ if [ -f $MKSDBX ]; then
 fi
 
 # report spent time of long running command automatically
-export REPORTTIME=10
+export REPORTTIME=1
