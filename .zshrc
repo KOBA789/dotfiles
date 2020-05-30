@@ -1,3 +1,10 @@
+# history
+HISTFILE="${HOME}/.zsh_history"
+HISTSIZE=1000000
+SAVEHIST=1000000
+setopt extended_history
+setopt share_history
+
 # inits
 for f in $(ls ${HOME}/.zsh/*.zsh | sort); do
     source $f
@@ -75,13 +82,6 @@ setopt auto_pushd
 setopt auto_cd
 setopt nolistbeep
 setopt hist_ignore_space
-
-# history
-HISTFILE="${HOME}/.zsh_history"
-HISTSIZE=1000000
-SAVEHIST=1000000
-setopt extended_history
-setopt share_history
 
 # editor
 export EDITOR='emacs'
