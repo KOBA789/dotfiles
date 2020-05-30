@@ -65,6 +65,7 @@ precmd() {
 }
 
 # completion
+fpath[1,0]=~/.zsh/functions/
 autoload -U compinit
 compinit -u
 autoload bashcompinit
