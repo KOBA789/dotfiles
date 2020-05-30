@@ -9,46 +9,6 @@
 
 (setq frame-background-mode 'dark)
 (setq truncate-partial-width-windows nil)
-(custom-set-variables
- ;; highlight region
- '(transient-mark-mode t)
-
- ;; indent
- '(tab-width 2)
- '(indent-tabs-mode nil)
- '(cssm-indent-level 2)
- '(cssm-indent-function #'cssm-c-style-indenter)
-
- ;; open big file
- '(large-file-warning-threshold nil)
-
- ;; ignore the warnings of local variable values
- '(safe-local-variable-values (quote ((eval add-hook (quote write-file-hooks) (quote time-stamp)))))
-
- ;; js2-mode
- '(js2-basic-offset 2)
- '(js2-include-node-externs t)
- '(js2-strict-trailing-comma-warning nil)
-
- ;; json
- '(js-indent-level 2)
-
-  ;; disable backup
- '(make-backup-files nil)
-
- ;; disable auto save
- '(auto-save-default nil)
-
- ;; disable git
- '(vc-handled-backends ())
-
- ;; direx icon
- '(direx:leaf-icon "  ")
- '(direx:open-icon "- ")
- '(direx:closed-icon "+ ")
-
- ;; highlight trailing whitespace
- '(show-trailing-whitespace t))
 
 ;; -Keybindings
 ;; --ToggleTruncateLines
