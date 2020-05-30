@@ -33,11 +33,11 @@
      (eval add-hook
            (quote write-file-hooks)
            (quote time-stamp)))))
+ '(scroll-conservatively 1)
  '(show-trailing-whitespace t)
  '(tab-width 2)
  '(transient-mark-mode t)
- '(vc-handled-backends nil)
- '(scroll-conservatively 1))
+ '(vc-handled-backends nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
