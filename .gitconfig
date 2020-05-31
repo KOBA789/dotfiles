@@ -13,7 +13,7 @@
 	ps = push
 	lg = log --stat --graph --decorate=full
 	pl = pull
-  delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 [push]
 	default = simple
 [include]
