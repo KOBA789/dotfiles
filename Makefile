@@ -1,4 +1,4 @@
-all: emacs zsh tmux npm_completion brew_completion git alacritty
+all: emacs zsh tmux git alacritty
 
 emacs:
 	ln -s -f ${PWD}/.emacs ${HOME}/.emacs
@@ -17,19 +17,15 @@ emacs:
 	@echo "  M-x package-install-selected-packages"
 
 zsh:
-	ln -s -f ${PWD}/.zshrc ${HOME}/.zshrc
-	mkdir -p ${HOME}/.zsh/functions
-	if [ ! -e ${HOME}/.zsh/00-machine.zsh ]; then cp ${PWD}/.zsh/00-machine.zsh ${HOME}/.zsh/00-machine.zsh; fi
-
-npm_completion: zsh
-	if [ $(shell which npm 2>&1 > /dev/null; echo $$?) -eq 0 ]; then \
-		npm completion > ${HOME}/.zsh/npm-completion.bash; \
-	fi
-
-brew_completion: zsh
-	if [ $(shell which brew 2>&1 > /dev/null; echo $$?) -eq 0 ]; then \
-		ln -s -f /usr/local/Library/Contributions/brew_zsh_completion.zsh ${HOME}/.zsh/functions/_brew; \
-	fi
+	ln -s -f ${PWD}/.zshenv ${HOME}/.zshenv
+	mkdir -p ${HOME}/.zsh
+	ln -s -f ${PWD}/.zsh/.zshenv ${HOME}/.zsh/.zshenv
+	if [ ! -e ${HOME}/.zsh/.zshenv.local ]; then cp ${PWD}/.zsh/.zshenv.local ${HOME}/.zsh/.zshenv.local; fi
+	ln -s -f ${PWD}/.zsh/.zprofile ${HOME}/.zsh/.zprofile
+	if [ ! -e ${HOME}/.zsh/.zprofile.local ]; then cp ${PWD}/.zsh/.zprofile.local ${HOME}/.zsh/.zprofile.local; fi
+	ln -s -f ${PWD}/.zsh/.zshrc ${HOME}/.zsh/.zshrc
+	if [ ! -e ${HOME}/.zsh/.zshrc.local ]; then cp ${PWD}/.zsh/.zshrc.local ${HOME}/.zsh/.zshrc.local; fi
+	ln -s -f ${PWD}/.zsh/.zshenv.d ${HOME}/.zsh/.zshenv.d
 
 tmux:
 	if [ $(shell which tmux 2>&1 > /dev/null; echo $$?) -eq 0 ]; then \
@@ -49,4 +45,4 @@ alacritty:
 	mkdir -p ${HOME}/.config/alacritty
 	ln -s -f ${PWD}/.config/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 
-.PHONY: all emacs zsh npm_completion brew_completion tmux git alacritty
+.PHONY: all emacs zsh tmux git alacritty
