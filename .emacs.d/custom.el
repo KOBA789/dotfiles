@@ -16,7 +16,7 @@
  '(make-backup-files nil)
  '(package-selected-packages
    (quote
-    (robe auto-sudoedit jsonnet-mode terraform-mode apache-mode js2-mode ggtags dockerfile-mode zlc yaml-mode web-mode scss-mode nginx-mode markdown-mode+ less-css-mode js2-refactor init-loader haml-mode go-mode go-autocomplete esup erlang enh-ruby-mode coffee-mode)))
+    (popup robe auto-sudoedit jsonnet-mode terraform-mode apache-mode js2-mode ggtags dockerfile-mode zlc yaml-mode web-mode scss-mode nginx-mode markdown-mode+ less-css-mode js2-refactor init-loader haml-mode go-mode go-autocomplete esup erlang enh-ruby-mode coffee-mode)))
  '(safe-local-variable-values
    (quote
     ((eval add-hook
