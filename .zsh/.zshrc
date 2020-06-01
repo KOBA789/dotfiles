@@ -1,3 +1,5 @@
+[ -r /etc/zshrc ] && . /etc/zshrc
+
 # color
 autoload colors
 colors

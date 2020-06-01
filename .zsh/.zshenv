@@ -1,5 +1,10 @@
 #zmodload zsh/zprof && zprof
 
+setopt no_global_rcs
+if [ -x /usr/libexec/path_helper ]; then
+    eval `/usr/libexec/path_helper -s`
+fi
+
 # history
 HISTFILE=$ZDOTDIR/.zsh_history
 HISTSIZE=1000000
