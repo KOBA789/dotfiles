@@ -25,7 +25,7 @@ zsh:
 	if [ ! -e ${HOME}/.zsh/.zprofile.local ]; then cp ${PWD}/.zsh/.zprofile.local ${HOME}/.zsh/.zprofile.local; fi
 	ln -sf ${PWD}/.zsh/.zshrc ${HOME}/.zsh/.zshrc
 	if [ ! -e ${HOME}/.zsh/.zshrc.local ]; then cp ${PWD}/.zsh/.zshrc.local ${HOME}/.zsh/.zshrc.local; fi
-	ln -s -f ${PWD}/.zsh/.zshenv.d ${HOME}/.zsh/.zshenv.d
+	ln -sfn ${PWD}/.zsh/.zshenv.d ${HOME}/.zsh/.zshenv.d
 
 tmux:
 	if [ $(shell which tmux 2>&1 > /dev/null; echo $$?) -eq 0 ]; then \
