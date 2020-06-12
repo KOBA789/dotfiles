@@ -1,0 +1,1 @@
+export WATASHI=koba789
