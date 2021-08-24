@@ -13,8 +13,7 @@ emacs:
 
 	ln -s -f ${PWD}/.emacs.d/custom.el ${HOME}/.emacs.d/custom.el
 
-	@echo "You should run"
-	@echo "  M-x package-install-selected-packages"
+	emacs --batch -l ~/.emacs -l install-packages.el
 
 zsh:
 	ln -sf ${PWD}/.zshenv ${HOME}/.zshenv
