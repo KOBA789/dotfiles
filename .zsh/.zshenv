@@ -18,7 +18,7 @@ setopt no_flow_control
 setopt hist_no_store
 
 # PATH
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:/opt/homebrew/bin:$PATH"
 export PATH="$HOME/go/bin:/usr/local/go/bin:$PATH"
 export PATH="$PATH:./node_modules/.bin"
 

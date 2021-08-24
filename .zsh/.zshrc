@@ -1,5 +1,10 @@
 [ -r /etc/zshrc ] && . /etc/zshrc
 
+# profile
+PROFILE_DEFAULT_ARCH=${PROFILE_DEFAULT_ARCH:-x86_64}
+PROFILE_DEFAULT_USER=${PROFILE_DEFAULT_USER:-koba789}
+PROFILE_DEFAULT_HOST=${PROFILE_DEFAULT_HOST:-koba789-pro}
+
 # color
 autoload colors
 colors
@@ -11,6 +16,12 @@ zstyle ':vcs_info:*' actionformats '#%b|%a'
 PR_USER="%U%n%u%F{250}@%f"
 PR_COLON="%F{250}:%f"
 PR_HOST="%m${PR_COLON}"
+PR_ARCH_CACHE=$(/usr/bin/uname -m)
+if [ $PROFILE_DEFAULT_ARCH != $PR_ARCH_CACHE ]; then
+    PR_ARCH="%F{green}${PR_ARCH_CACHE}%F{250}|%f"
+else
+    PR_ARCH=""
+fi
 precmd() {
     local PR_HOST_H="%B%K{$COLOR_DARK}%m%k%b${PR_COLON}"
     LANG=en_US.UTF-8 vcs_info
@@ -28,6 +39,7 @@ precmd() {
     elif [ $PROFILE_DEFAULT_USER != $USER ]; then
         PROMPT="${PR_USER}${PR_HOST}${PROMPT}"
     fi
+    PROMPT="${PR_ARCH}${PROMPT}"
 }
 
 # completion
@@ -68,10 +80,6 @@ esac
 
 export COLOR_DARK=${THEME_COLOR%-*}
 export COLOR_LIGHT=${THEME_COLOR#*-}
-
-# profile
-PROFILE_DEFAULT_USER=${PROFILE_DEFAULT_USER:-koba789}
-PROFILE_DEFAULT_HOST=${PROFILE_DEFAULT_HOST:-koba789-pro}
 
 if (which zprof > /dev/null 2>&1) ;then
   zprof
