@@ -2,13 +2,13 @@
 
 The dotfiles KOBA789 uses.
 
-## How to Use
+## Usage
 
-1. clone
- - `git clone https://github.com/KOBA789/dotfiles.git`
- - `cd dotfiles`
-2. make
- - `make`
+```
+$ git clone https://github.com/KOBA789/dotfiles.git
+$ cd dotfiles
+$ make
+```
 
 ## Warning
 
