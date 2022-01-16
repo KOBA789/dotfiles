@@ -6,6 +6,6 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
-(require 'init-loader)
-(setq init-loader-show-log-after-init 'error-only)
-(init-loader-load "~/.emacs.d/inits")
+(when (require 'init-loader nil t)
+  (setq init-loader-show-log-after-init 'error-only)
+  (init-loader-load "~/.emacs.d/inits"))
