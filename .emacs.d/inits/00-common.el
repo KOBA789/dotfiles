@@ -214,8 +214,7 @@
 (set-east-asian-ambiguous-width 1)
 
 ;; -sudo
-(require 'auto-sudoedit)
-(advice-add 'find-file-noselect :around 'auto-sudoedit)
+(auto-sudoedit-mode 1)
 
 ;; -opacity
 (defun on-after-init ()
