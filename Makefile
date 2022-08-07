@@ -1,4 +1,4 @@
-all: emacs zsh tmux git alacritty
+all: emacs zsh tmux git alacritty karabiner
 
 emacs:
 	ln -s -f ${PWD}/.emacs ${HOME}/.emacs
@@ -38,4 +38,8 @@ alacritty:
 	mkdir -p ${HOME}/.config/alacritty
 	ln -s -f ${PWD}/.config/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 
-.PHONY: all emacs zsh tmux git alacritty
+karabiner:
+	mkdir -p ${HOME}/.config/karabiner
+	ln -s -f ${PWD}/.config/karabiner/karabiner.json ${HOME}/.config/karabiner/karabiner.json
+
+.PHONY: all emacs zsh tmux git alacritty karabiner
