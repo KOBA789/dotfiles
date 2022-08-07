@@ -27,13 +27,7 @@ zsh:
 	ln -sfn ${PWD}/.zsh/.zshenv.d ${HOME}/.zsh/.zshenv.d
 
 tmux:
-	if [ $(shell which tmux 2>&1 > /dev/null; echo $$?) -eq 0 ]; then \
-		if [ $(shell bash -c '[[ `tmux -V` == *3.* ]]'; echo $$?) -eq 0 ]; then \
-			ln -s -f ${PWD}/.tmux29.conf ${HOME}/.tmux.conf; \
-		else \
-			ln -s -f ${PWD}/.tmux2.conf ${HOME}/.tmux.conf; \
-		fi \
-	fi
+	ln -s -f ${PWD}/.tmux.conf ${HOME}/.tmux.conf
 
 git:
 	ln -s -f ${PWD}/.gitconfig ${HOME}/.gitconfig
