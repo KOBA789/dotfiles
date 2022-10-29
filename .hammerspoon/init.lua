@@ -38,12 +38,12 @@ dragMiddleToScroll = hs.eventtap.new({ hs.eventtap.event.types.otherMouseDragged
 
     deferred = false
 
-    oldmousepos = hs.mouse.getAbsolutePosition()    
+    oldmousepos = hs.mouse.getAbsolutePosition()
 
     local dx = e:getProperty(hs.eventtap.event.properties['mouseEventDeltaX'])
     local dy = e:getProperty(hs.eventtap.event.properties['mouseEventDeltaY'])
     local scroll = hs.eventtap.event.newScrollEvent({dx * beta, dy * beta},{},'pixel')
-    
+
     -- put the mouse back
     hs.mouse.setAbsolutePosition(oldmousepos)
 
