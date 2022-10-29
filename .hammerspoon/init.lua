@@ -53,3 +53,14 @@ end)
 overrideMiddleMouseDown:start()
 overrideMiddleMouseUp:start()
 dragMiddleToScroll:start()
+
+-- Put the foreground window at the center of the screen (for screen capture)
+hs.hotkey.bind({'cmd', 'ctrl'}, '1', function (mods, key)
+  local window = hs.window.frontmostWindow()
+  if window then
+    print(window)
+    local w = 1920
+    local h = 1080
+    window:move({w/2, h/2, w, h}, nil, false, 0)
+  end
+end, nil, nil)
