@@ -1,7 +1,8 @@
 all: emacs zsh tmux git alacritty karabiner hammerspoon
 
 emacs:
-	ln -s -f ${PWD}/.emacs ${HOME}/.emacs
+	mkdir -p ${HOME}/.emacs.d/inits
+	ln -s -f ${PWD}/.emacs.d/init.el ${HOME}/.emacs.d/init.el
 
 	mkdir -p ${HOME}/.emacs.d/inits
 	ln -s -f ${PWD}/.emacs.d/inits/* ${HOME}/.emacs.d/inits
@@ -13,7 +14,7 @@ emacs:
 
 	ln -s -f ${PWD}/.emacs.d/custom.el ${HOME}/.emacs.d/custom.el
 
-	emacs --batch -l ~/.emacs -l install-packages.el
+	emacs --batch -l ~/.emacs.d/init.el -l install-packages.el
 
 zsh:
 	ln -sf ${PWD}/.zshenv ${HOME}/.zshenv

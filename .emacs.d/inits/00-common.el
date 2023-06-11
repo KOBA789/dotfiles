@@ -1,6 +1,7 @@
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(add-to-list 'custom-theme-load-path
+             (expand-file-name "themes" user-emacs-directory))
 
-(let ((default-directory (expand-file-name "~/.emacs.d/elisp")))
+(let ((default-directory (expand-file-name "elisp" user-emacs-directory)))
   (add-to-list 'load-path default-directory)
   (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
       (normal-top-level-add-subdirs-to-load-path)))
@@ -82,7 +83,6 @@
 
 ;; -auto-complete
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/elisp/ac-dict")
 (ac-config-default)
 (setq ac-ignore-case nil)
 
@@ -108,18 +108,11 @@
   (setq tab-width 2))
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
-;; -typescript-mode
-(autoload 'typescript-mode "typescript-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.ts$" . typescript-mode))
-
 ;; -html-mode
 ;; --Config
 (add-hook 'html-mode-hook
           '(lambda ()
              (setq auto-coding-functions nil)))
-
-;; -gaml
-(add-to-list 'auto-mode-alist '("\\.gaml" . xml-mode))
 
 ;; -go-mode
 (autoload 'go-mode "go-mode" nil t)
@@ -134,12 +127,6 @@
 ;; -less-css-mode
 (autoload 'less-css-mode "less-css-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.less$" . less-css-mode))
-
-;; -coffee-mode
-(autoload 'coffee-mode "coffee-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
-(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-(add-to-list 'ac-modes 'coffee-mode)
 
 ;; -c-mode
 (defun linux-style ()

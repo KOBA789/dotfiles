@@ -4,7 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-save-default nil)
- '(cssm-indent-function (function cssm-c-style-indenter))
+ '(cssm-indent-function #'cssm-c-style-indenter)
  '(cssm-indent-level 2)
  '(enh-ruby-add-encoding-comment-on-save nil)
  '(indent-tabs-mode nil)
@@ -15,13 +15,8 @@
  '(large-file-warning-threshold nil)
  '(make-backup-files nil)
  '(package-selected-packages
-   (quote
-    (nftables-mode csharp-mode rust-mode popup robe auto-sudoedit jsonnet-mode terraform-mode js2-mode ggtags dockerfile-mode zlc yaml-mode web-mode scss-mode nginx-mode markdown-mode+ less-css-mode js2-refactor init-loader haml-mode go-mode go-autocomplete esup enh-ruby-mode)))
- '(safe-local-variable-values
-   (quote
-    ((eval add-hook
-           (quote write-file-hooks)
-           (quote time-stamp)))))
+   '(nftables-mode rust-mode popup robe auto-sudoedit jsonnet-mode terraform-mode js2-mode ggtags dockerfile-mode zlc yaml-mode web-mode scss-mode nginx-mode less-css-mode js2-refactor init-loader haml-mode go-mode go-autocomplete esup enh-ruby-mode))
+ '(safe-local-variable-values '((eval add-hook 'write-file-hooks 'time-stamp)))
  '(scroll-conservatively 1)
  '(show-trailing-whitespace t)
  '(tab-width 2)
