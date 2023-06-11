@@ -15,7 +15,7 @@
  '(large-file-warning-threshold nil)
  '(make-backup-files nil)
  '(package-selected-packages
-   '(nftables-mode rust-mode popup robe auto-sudoedit jsonnet-mode terraform-mode js2-mode ggtags dockerfile-mode zlc yaml-mode web-mode scss-mode nginx-mode less-css-mode js2-refactor init-loader haml-mode go-mode go-autocomplete esup enh-ruby-mode))
+   '(markdown-mode nftables-mode rust-mode popup robe auto-sudoedit jsonnet-mode terraform-mode js2-mode ggtags dockerfile-mode zlc yaml-mode web-mode scss-mode nginx-mode less-css-mode js2-refactor init-loader haml-mode go-mode go-autocomplete esup enh-ruby-mode))
  '(safe-local-variable-values '((eval add-hook 'write-file-hooks 'time-stamp)))
  '(scroll-conservatively 1)
  '(show-trailing-whitespace t)
