@@ -1,6 +1,7 @@
 all: emacs zsh tmux git alacritty karabiner hammerspoon
 
 emacs:
+	mkdir -p ${HOME}/.emacs.d
 	ln -s -f ${PWD}/.emacs.d/early-init.el ${HOME}/.emacs.d/early-init.el
 	ln -s -f ${PWD}/.emacs.d/init.el ${HOME}/.emacs.d/init.el
 
