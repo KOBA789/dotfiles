@@ -11,7 +11,6 @@
   (add-hook 'kill-emacs-hook (lambda () (delete-file custom-file))))
 
 (eval-when-compile
-  (package-initialize)
   (unless (package-installed-p 'leaf)
     (package-refresh-contents)
     (package-install 'leaf))
