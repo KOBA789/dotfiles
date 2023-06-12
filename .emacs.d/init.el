@@ -40,7 +40,8 @@
     (transient-mark-mode . t)
     (scroll-conservatively . 1)
     (show-trailing-whitespace . t)
-    (vc-handled-backends . nil))
+    (vc-handled-backends . nil)
+    (enable-local-variables . nil))
 
   (leaf ido
     :require t
@@ -66,6 +67,7 @@
     "\\.\\(?:rb\\|ru\\|rake\\|gemspec\\|iam\\)\\'"
     "/\\(?:Gem\\|Rake\\|Cap\\|Vagrant\\)file\\'"
     :interpreter "ruby"
+    :magic "ruby"
     :mode-hook
     (auto-complete-mode))
 
