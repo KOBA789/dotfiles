@@ -29,6 +29,9 @@
 (setq inhibit-startup-screen t)
 (setq max-lisp-eval-depth 10000)
 
+(setq auto-save-default nil)
+(setq make-backup-files nil)
+
 (eval-and-compile
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))

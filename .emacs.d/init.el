@@ -35,8 +35,6 @@
 
   (leaf custom
     :setq-default
-    (auto-save-default . nil)
-    (make-backup-files . nil)
     (tab-width . 2)
     (indent-tabs-mode . nil)
     (large-file-warning-threshold . nil)
