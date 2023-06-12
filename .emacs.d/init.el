@@ -40,10 +40,7 @@
     (transient-mark-mode . t)
     (scroll-conservatively . 1)
     (show-trailing-whitespace . t)
-    (vc-handled-backends . nil)
-
-    (line-number-mode . t)
-    (column-number-mode . t))
+    (vc-handled-backends . nil))
 
   (leaf ido
     :require t
@@ -115,6 +112,66 @@
   (leaf nginx-mode :ensure t)
 
   (leaf markdown-mode :ensure t))
+
+(leaf *powerline
+  :setq-default
+  (line-number-mode . t)
+  (column-number-mode . t)
+  :defun
+  (git-branch-mode-line make/set-face)
+  :init
+  (defun git-branch-mode-line ()
+    (let* ((branch (string-trim (shell-command-to-string "git rev-parse --abbrev-ref HEAD 2>/dev/null")))
+           (mode-line-str (if (string= branch "") "" (format " #%s " branch))))
+      mode-line-str))
+
+  (setq-default mode-line-format
+                '((:propertize (:eval (git-branch-mode-line)) face mode-line-git-branch)
+                  (:propertize " %b " face mode-line-buffer-name)
+                  (:propertize "%+ "  face mode-line-buffer-status)
+                  (:propertize
+                   (" " (:eval (format-mode-line mode-name))
+                    " :" minor-mode-alist " ")
+                   face mode-line-modes)
+                  (:propertize " %l:%c "       face mode-line-info)))
+
+  (set-face-attribute 'mode-line nil
+                      :foreground "color-231"
+                      :background "color-236" :box nil)
+  (set-face-attribute 'mode-line-inactive nil
+                      :foreground "color-231"
+                      :background "color-234" :box nil)
+  (defun make/set-face (face-name fg-color bg-color weight)
+    (make-face face-name)
+    (set-face-attribute face-name nil
+                        :foreground fg-color
+                        :background bg-color
+                        :box nil
+                        :weight weight))
+
+  (defconst theme-color-light (concat "color-" (getenv "COLOR_LIGHT")))
+  (defconst theme-color-dark  (concat "color-" (getenv "COLOR_DARK")))
+
+  (make/set-face 'mode-line-buffer-status
+                 "color-231"
+                 theme-color-dark
+                 'normal)
+  (make/set-face 'mode-line-buffer-name
+                 "color-231"
+                 theme-color-dark
+                 'bold)
+  (make/set-face 'mode-line-git-branch
+                 "black"
+                 "green"
+                 'normal)
+  (make/set-face 'mode-line-modes
+                 "color-231"
+                 "color-236"
+                 'normal)
+  (make/set-face 'mode-line-info
+                 "color-231"
+                 theme-color-light
+                 'normal))
 
 (setq file-name-handler-alist my/saved-file-name-handler-alist)
 
