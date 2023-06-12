@@ -115,7 +115,7 @@
                         (:propertize "%+ "  face mode-line-buffer-status)
                         (:propertize
                          (" " (:eval (format-mode-line mode-name))
-                          " :" minor-mode-alist " ")
+                          minor-mode-alist " ")
                          face mode-line-modes)
                         (:propertize " %l:%c "       face mode-line-info)))
   :defun
