@@ -117,6 +117,8 @@
   :setq-default
   (line-number-mode . t)
   (column-number-mode . t)
+  :defun
+  make/set-face
   :init
   (setq-default mode-line-format
                 '((:propertize " %b " face mode-line-buffer-name)

@@ -25,6 +25,7 @@
 (push '(menu-bar-lines . 0) default-frame-alist)
 (push '(tool-bar-lines . 0) default-frame-alist)
 
+(defvar warning-minimum-level)
 (setq warning-minimum-level :error)
 (setq inhibit-startup-screen t)
 (setq max-lisp-eval-depth 10000)
