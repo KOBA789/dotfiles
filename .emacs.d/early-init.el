@@ -35,6 +35,8 @@
 
 (setq package-enable-at-startup nil)
 
+(setq-default mode-line-format (list))
+
 (eval-and-compile
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)

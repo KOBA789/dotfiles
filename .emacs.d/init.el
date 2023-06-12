@@ -111,17 +111,16 @@
   :setq-default
   (line-number-mode . t)
   (column-number-mode . t)
+  (mode-line-format . '((:propertize " %b " face mode-line-buffer-name)
+                        (:propertize "%+ "  face mode-line-buffer-status)
+                        (:propertize
+                         (" " (:eval (format-mode-line mode-name))
+                          " :" minor-mode-alist " ")
+                         face mode-line-modes)
+                        (:propertize " %l:%c "       face mode-line-info)))
   :defun
   make/set-face
   :init
-  (setq-default mode-line-format
-                '((:propertize " %b " face mode-line-buffer-name)
-                  (:propertize "%+ "  face mode-line-buffer-status)
-                  (:propertize
-                   (" " (:eval (format-mode-line mode-name))
-                    " :" minor-mode-alist " ")
-                   face mode-line-modes)
-                  (:propertize " %l:%c "       face mode-line-info)))
 
   (set-face-attribute 'mode-line nil
                       :foreground "color-231"
