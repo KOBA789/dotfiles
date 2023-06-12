@@ -60,20 +60,14 @@
 
   (leaf rust-mode :ensure t)
 
-  (leaf *ruby-lang
-    :config
-    (leaf enh-ruby-mode
-      :ensure t
-      :mode
-      "\\.\\(?:rb\\|ru\\|rake\\|gemspec\\|iam\\)\\'"
-      "/\\(?:Gem\\|Rake\\|Cap\\|Vagrant\\)file\\'"
-      :interpreter "ruby"
-      :mode-hook
-      (robe-mode))
-    (leaf robe
-      :ensure t
-      :hook robe-mode-hook
-      (ac-robe-setup)))
+  (leaf enh-ruby-mode
+    :ensure t
+    :mode
+    "\\.\\(?:rb\\|ru\\|rake\\|gemspec\\|iam\\)\\'"
+    "/\\(?:Gem\\|Rake\\|Cap\\|Vagrant\\)file\\'"
+    :interpreter "ruby"
+    :mode-hook
+    (auto-complete-mode))
 
   (leaf *js-lang
     :config
