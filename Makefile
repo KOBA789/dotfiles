@@ -1,20 +1,11 @@
 all: emacs zsh tmux git alacritty karabiner hammerspoon
 
 emacs:
-	mkdir -p ${HOME}/.emacs.d/inits
+	ln -s -f ${PWD}/.emacs.d/early-init.el ${HOME}/.emacs.d/early-init.el
 	ln -s -f ${PWD}/.emacs.d/init.el ${HOME}/.emacs.d/init.el
 
-	mkdir -p ${HOME}/.emacs.d/inits
-	ln -s -f ${PWD}/.emacs.d/inits/* ${HOME}/.emacs.d/inits
-
-	mkdir -p ${HOME}/.emacs.d/themes
-	ln -s -f ${PWD}/.emacs.d/themes/dark-laptop-theme.el ${HOME}/.emacs.d/themes/dark-laptop-theme.el
-
-	mkdir -p ${HOME}/.emacs.d/elisp
-
-	ln -s -f ${PWD}/.emacs.d/custom.el ${HOME}/.emacs.d/custom.el
-
-	emacs --batch -l ~/.emacs.d/init.el -l install-packages.el
+	emacs -Q --batch -f batch-byte-compile ${HOME}/.emacs.d/early-init.el
+	emacs -Q --batch -l ${HOME}/.emacs.d/early-init.el -f batch-byte-compile ${HOME}/.emacs.d/init.el
 
 zsh:
 	ln -sf ${PWD}/.zshenv ${HOME}/.zshenv
