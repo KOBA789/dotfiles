@@ -98,8 +98,6 @@
 
   (leaf web-mode :ensure t)
 
-  (leaf less-css-mode :ensure t)
-
   (leaf haml-mode :ensure t)
 
   (leaf go-mode :ensure t)
