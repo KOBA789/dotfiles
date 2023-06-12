@@ -117,17 +117,9 @@
   :setq-default
   (line-number-mode . t)
   (column-number-mode . t)
-  :defun
-  (git-branch-mode-line make/set-face)
   :init
-  (defun git-branch-mode-line ()
-    (let* ((branch (string-trim (shell-command-to-string "git rev-parse --abbrev-ref HEAD 2>/dev/null")))
-           (mode-line-str (if (string= branch "") "" (format " #%s " branch))))
-      mode-line-str))
-
   (setq-default mode-line-format
-                '((:propertize (:eval (git-branch-mode-line)) face mode-line-git-branch)
-                  (:propertize " %b " face mode-line-buffer-name)
+                '((:propertize " %b " face mode-line-buffer-name)
                   (:propertize "%+ "  face mode-line-buffer-status)
                   (:propertize
                    (" " (:eval (format-mode-line mode-name))
@@ -160,10 +152,6 @@
                  "color-231"
                  theme-color-dark
                  'bold)
-  (make/set-face 'mode-line-git-branch
-                 "black"
-                 "green"
-                 'normal)
   (make/set-face 'mode-line-modes
                  "color-231"
                  "color-236"
