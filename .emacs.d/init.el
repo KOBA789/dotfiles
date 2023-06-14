@@ -73,6 +73,7 @@
 
   (leaf *js-lang
     :config
+    (leaf js-mode :setq-default (js-indent-level . 2))
     (leaf js2-mode :ensure t :mode "\\.js$")
     (leaf js2-refactor :ensure t))
 
