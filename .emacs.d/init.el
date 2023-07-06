@@ -100,6 +100,8 @@
 
   (leaf dockerfile-mode :ensure t)
 
+  (leaf earthfile-mode :ensure t)
+
   (leaf jsonnet-mode :ensure t)
 
   (leaf terraform-mode :ensure t)
