@@ -1,6 +1,6 @@
 source $ZDOTDIR/.zshenv.d/coreutils.zsh
 source $ZDOTDIR/.zshenv.d/rbenv.zsh
-source $ZDOTDIR/.zshenv.d/nvm.zsh
+source $ZDOTDIR/.zshenv.d/volta.zsh
 source $ZDOTDIR/.zshenv.d/cargo.zsh
 source $ZDOTDIR/.zshenv.d/rustc_sccache.zsh
 source $ZDOTDIR/.zshenv.d/watashi.zsh
