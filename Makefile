@@ -1,4 +1,4 @@
-all: emacs zsh tmux git alacritty karabiner hammerspoon
+all: emacs zsh tmux git alacritty ghostty karabiner hammerspoon
 
 emacs:
 	mkdir -p ${HOME}/.emacs.d
@@ -31,6 +31,10 @@ alacritty:
 	mkdir -p ${HOME}/.config/alacritty
 	ln -s -f ${PWD}/.config/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 
+ghostty:
+	mkdir -p ${HOME}/.config/ghostty
+	ln -s -f ${PWD}/.config/ghostty/config ${HOME}/.config/ghostty/config
+
 karabiner:
 	mkdir -p ${HOME}/.config/karabiner
 	ln -s -f ${PWD}/.config/karabiner/karabiner.json ${HOME}/.config/karabiner/karabiner.json
@@ -39,4 +43,4 @@ hammerspoon:
 	mkdir -p ${HOME}/.hammerspoon
 	ln -s -f ${PWD}/.hammerspoon/init.lua ${HOME}/.hammerspoon/init.lua
 
-.PHONY: all emacs zsh tmux git alacritty karabiner hammerspoon
+.PHONY: all emacs zsh tmux git alacritty ghostty karabiner hammerspoon
