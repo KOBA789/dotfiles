@@ -40,6 +40,10 @@ cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
+# Keybinds
+## for emacs undo
+keybind = ctrl+minus=text:\x1f
+
 # macOS
 macos-option-as-alt = true
 
