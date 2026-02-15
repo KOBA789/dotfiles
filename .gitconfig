@@ -14,6 +14,15 @@
 	lg = log --stat --graph --decorate=full
 	pl = pull
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+  aicommit = "!f() { \
+              COMMITMSG=$(claude --model haiku -p \
+                'Generate ONLY a one-line Git commit message in English, \
+                using imperative mood, summarizing what was changed and why, \
+                based strictly on the contents of `git diff --cached`. \
+                Do not add explanation or a body. \
+                Output only the commit summary line.'); \
+              git commit -m \"$COMMITMSG\" -e; \
+              }; f"
 [push]
 	default = simple
 [include]
