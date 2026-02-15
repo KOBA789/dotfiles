@@ -91,15 +91,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-  # Faux Scrolling
-  #
-  # The `faux_multiplier` setting controls the number of lines the terminal
-  # should scroll when the alternate screen buffer is active. This is used
-  # to allow mouse scrolling for applications like `man`.
-  #
-  # Specifying `0` will disable faux scrolling.
-  multiplier: 3
-
 # Font configuration (changes require restart)
 font:
   normal:
@@ -308,9 +299,6 @@ debug:
 
   # Print all received window events.
   print_events: false
-
-  # Record all characters and escape sequences as test data.
-  ref_test: false
 
 # Key bindings
 #
