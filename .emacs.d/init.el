@@ -128,11 +128,11 @@
   :init
 
   (set-face-attribute 'mode-line nil
-                      :foreground "color-231"
-                      :background "color-236" :box nil)
+                      :foreground "#ffffff"
+                      :background "#303030" :box nil)
   (set-face-attribute 'mode-line-inactive nil
-                      :foreground "color-231"
-                      :background "color-234" :box nil)
+                      :foreground "#ffffff"
+                      :background "#1c1c1c" :box nil)
   (defun make/set-face (face-name fg-color bg-color weight)
     (make-face face-name)
     (set-face-attribute face-name nil
@@ -141,23 +141,23 @@
                         :box nil
                         :weight weight))
 
-  (defconst theme-color-light (concat "color-" (getenv "COLOR_LIGHT")))
-  (defconst theme-color-dark  (concat "color-" (getenv "COLOR_DARK")))
+  (defconst theme-color-light (getenv "COLOR_LIGHT_HEX"))
+  (defconst theme-color-dark  (getenv "COLOR_DARK_HEX"))
 
   (make/set-face 'mode-line-buffer-status
-                 "color-231"
+                 "#ffffff"
                  theme-color-dark
                  'normal)
   (make/set-face 'mode-line-buffer-name
-                 "color-231"
+                 "#ffffff"
                  theme-color-dark
                  'bold)
   (make/set-face 'mode-line-modes
-                 "color-231"
-                 "color-236"
+                 "#ffffff"
+                 "#303030"
                  'normal)
   (make/set-face 'mode-line-info
-                 "color-231"
+                 "#ffffff"
                  theme-color-light
                  'normal))
 

@@ -67,19 +67,21 @@ source ${HOME}/.zsh/.zshrc.local
 THEME_COLOR=${THEME_COLOR:-raspberry}
 
 case $THEME_COLOR in
-    orange    ) THEME_COLOR=166-172;;
-    green     ) THEME_COLOR=28-35;;
-    blue      ) THEME_COLOR=25-32;;
-    sky       ) THEME_COLOR=32-39;;
-    red       ) THEME_COLOR=124-160;;
-    raspberry ) THEME_COLOR=125-126;;
-    pink      ) THEME_COLOR=198-199;;
-    purple    ) THEME_COLOR=90-91;;
-    gray      ) THEME_COLOR=240-242;;
+    orange    ) THEME_COLOR=166-172; THEME_COLOR_HEX='#d75f00-#d78700';;
+    green     ) THEME_COLOR=28-35;   THEME_COLOR_HEX='#008700-#00af5f';;
+    blue      ) THEME_COLOR=25-32;   THEME_COLOR_HEX='#005faf-#0087d7';;
+    sky       ) THEME_COLOR=32-39;   THEME_COLOR_HEX='#0087d7-#00afff';;
+    red       ) THEME_COLOR=124-160; THEME_COLOR_HEX='#af0000-#d70000';;
+    raspberry ) THEME_COLOR=125-126; THEME_COLOR_HEX='#af005f-#af0087';;
+    pink      ) THEME_COLOR=198-199; THEME_COLOR_HEX='#ff0087-#ff00af';;
+    purple    ) THEME_COLOR=90-91;   THEME_COLOR_HEX='#870087-#8700af';;
+    gray      ) THEME_COLOR=240-242; THEME_COLOR_HEX='#585858-#6c6c6c';;
 esac
 
 export COLOR_DARK=${THEME_COLOR%-*}
 export COLOR_LIGHT=${THEME_COLOR#*-}
+export COLOR_DARK_HEX=${THEME_COLOR_HEX%-*}
+export COLOR_LIGHT_HEX=${THEME_COLOR_HEX#*-}
 
 if (which zprof > /dev/null 2>&1) ;then
   zprof
