@@ -59,8 +59,14 @@ hs.hotkey.bind({'cmd', 'ctrl'}, '1', function (mods, key)
   local window = hs.window.frontmostWindow()
   if window then
     print(window)
+    local cx = 1920
+    local cy = 1080
     local w = 1920
     local h = 1080
-    window:move({w/2, h/2, w, h}, nil, false, 0)
+    window:move({cx - w/2, cy - h/2, w, h}, nil, false, 0)
+    actualSize = window:size()
+    local aw = actualSize.w
+    local ah = actualSize.h
+    window:move({cx - aw/2, cy - ah/2, aw, ah}, nil, false, 0)
   end
 end, nil, nil)
