@@ -31,6 +31,7 @@ palette = 14=#37e6e8
 palette = 15=#f1f1f0
 
 # Window
+split-divider-color = 444444
 window-padding-x = 4
 window-padding-y = 2
 
