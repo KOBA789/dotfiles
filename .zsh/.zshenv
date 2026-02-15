@@ -18,7 +18,7 @@ setopt no_flow_control
 setopt hist_no_store
 
 # PATH
-export PATH="$HOME/bin:/opt/homebrew/bin:$PATH"
+export PATH="$HOME/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export PATH="$HOME/go/bin:/usr/local/go/bin:$PATH"
 
 source $ZDOTDIR/.zshenv.local
