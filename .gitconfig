@@ -20,6 +20,8 @@
                 using imperative mood, summarizing what was changed and why, \
                 based strictly on the contents of `git diff --cached`. \
                 Do not add explanation or a body. \
+                The output MUST be 50 characters or fewer (including spaces). \
+                If necessary, rewrite to fit within the limit. \
                 Output only the commit summary line.'); \
               git commit -m \"$COMMITMSG\" -e; \
               }; f"
