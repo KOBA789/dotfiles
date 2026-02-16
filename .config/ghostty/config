@@ -5,6 +5,7 @@ font-style-bold = Bold
 font-style-italic = Oblique
 font-style-bold-italic = Bold Oblique
 font-size = 16
+font-thicken = true
 
 # Colors
 foreground = ffffff
