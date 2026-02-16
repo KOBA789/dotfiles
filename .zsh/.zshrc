@@ -1,5 +1,3 @@
-[ -r /etc/zshrc ] && . /etc/zshrc
-
 # profile
 PROFILE_DEFAULT_ARCH=${PROFILE_DEFAULT_ARCH:-x86_64}
 PROFILE_DEFAULT_USER=${PROFILE_DEFAULT_USER:-koba789}
