@@ -1,11 +1,13 @@
 # Font
-font-family = DejaVu Sans Mono
-font-style = Book
+font-family = Momiage Mono
+font-style = Regular
 font-style-bold = Bold
-font-style-italic = Oblique
-font-style-bold-italic = Bold Oblique
+font-style-italic = Italic
+font-style-bold-italic = Bold Italic
 font-size = 16
 font-thicken = true
+font-feature = -calt, -liga, -dlig
+adjust-cell-height = -5%
 
 # Colors
 foreground = ffffff
@@ -44,6 +46,7 @@ shell-integration-features = no-cursor
 # Keybinds
 ## for emacs undo
 keybind = ctrl+minus=text:\x1f
+keybind = ctrl+enter=text:\r
 
 # macOS
 macos-option-as-alt = true
