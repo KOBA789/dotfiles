@@ -1,4 +1,4 @@
-all: emacs zsh tmux git alacritty ghostty karabiner hammerspoon
+all: emacs zsh tmux git alacritty ghostty karabiner hammerspoon zed
 
 emacs:
 	mkdir -p ${HOME}/.emacs.d
@@ -43,4 +43,9 @@ hammerspoon:
 	mkdir -p ${HOME}/.hammerspoon
 	ln -s -f ${PWD}/.hammerspoon/init.lua ${HOME}/.hammerspoon/init.lua
 
-.PHONY: all emacs zsh tmux git alacritty ghostty karabiner hammerspoon
+zed:
+	mkdir -p ${HOME}/.config/zed
+	ln -s -f ${PWD}/.config/zed/settings.json ${HOME}/.config/zed/settings.json
+	ln -s -f ${PWD}/.config/zed/keymap.json ${HOME}/.config/zed/keymap.json
+
+.PHONY: all emacs zsh tmux git alacritty ghostty karabiner hammerspoon zed
