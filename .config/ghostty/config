@@ -47,6 +47,7 @@ shell-integration-features = no-cursor
 ## for emacs undo
 keybind = ctrl+minus=text:\x1f
 keybind = ctrl+enter=text:\r
+keybind = shift+enter=text:\r
 
 # macOS
 macos-option-as-alt = true
